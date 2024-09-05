@@ -30,7 +30,7 @@ module.exports = async (client, member) => {
             );
 
       // Envoie du message dans le salon
-      await channel.send({ embeds: [embed] });
+      await Channel.send({ embeds: [embed] });
         });
     } catch (error) {
         console.error('Erreur de traitement de l\'événement guildMemberAdd  :', error);
