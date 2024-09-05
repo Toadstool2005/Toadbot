@@ -4,7 +4,7 @@ const config = require("../../config.json");
 
 module.exports = async (client, member) => {
     try {
-        // Mettre à jour le canal vocal avec le nouveau nombre de membres
+        // Définir où le message embed sera envoyé
         const Channel = client.channels.cache.get(config.MembreID);
 
         // Calculer l’âge du compte
@@ -33,6 +33,6 @@ module.exports = async (client, member) => {
       await channel.send({ embeds: [embed] });
         });
     } catch (error) {
-        console.error('Erreur de traitement event guildMemberAdd  :', error);
+        console.error('Erreur de traitement de l\'événement guildMemberAdd  :', error);
     }
 };
