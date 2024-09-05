@@ -30,20 +30,9 @@ module.exports = async (client, member) => {
                 }
             );
 
-
-        // Récupérer les configurations des canaux pour le serveur
-        const serverConfigs = await ConfigSchema.find({ ServeurId: member.guild.id });
-
         // Envoie du message dans le salon
         await Channel.send({ embeds: [embed] });
 
-        // Envoyer le message embed à tous les canaux configurés
-        serverConfigs.forEach(config => {
-            const channel = client.channels.cache.get(config.MembreId);
-            if (channel) {
-                channel.send({ embeds: [embed] });
-            }
-        });
     } catch (error) {
         console.error('Erreur lors du traitement de l\'événement guildMemberRemove :', error);
     }
