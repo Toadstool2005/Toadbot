@@ -10,5 +10,4 @@ module.exports = async (client, guild) => {
             console.error(`Erreur lors de la mise en cache des membres de ${guild.name}:`, error);
         }
     });
-
 };
