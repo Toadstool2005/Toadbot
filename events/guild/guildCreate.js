@@ -13,7 +13,7 @@ module.exports = async (client, guild) => {
             const embed = new MessageEmbed()
                 .setColor('#0099ff')
                 .setTitle(`Bienvenue sur ${guild.name} !`)
-                .setDescription(`Hey, je suis Toad et je viens directement du Royaume Champignon pour vous servir ! Merci de m'avoir ajouté, j'espère ne pas vous décevoir ! Pour me configurer, utilisez la commande /config.`)
+                .setDescription(`Hey, je suis Toad et je viens directement du Royaume Champignon pour vous servir ! Merci de m'avoir ajouté, j'espère ne pas vous décevoir !`)
                 .setThumbnail(guild.iconURL({ dynamic: true }))
                 .setTimestamp()
                 .setFooter({text : `Bot ajouté à ${guild.name}`, iconURL: client.user.displayAvatarURL()});
