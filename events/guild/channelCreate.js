@@ -3,7 +3,7 @@ const config = require("../../config.json");
 
 module.exports = async (client, channel) => {
     try {
-        // Fetch the audit logs to find out who created the channel
+        // Récupérer les journaux d’audit pour savoir qui a créé le salon
         const auditLogs = await channel.guild.fetchAuditLogs({ type: "CHANNEL_CREATE", limit: 1 });
         const logEntry = auditLogs.entries.first();
 
