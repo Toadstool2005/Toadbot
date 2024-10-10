@@ -4,7 +4,7 @@ const config = require("../../config.json");
 module.exports = async (client, emoji) => {
     try {
         // Définir où le message embed sera envoyé
-        const Channel = client.channels.cache.get(config.ChannelID);
+        const Channel = client.channels.cache.get(config.ModérationID);
 
         const fetchEmojiAuthor = await emoji.fetchAuthor();
         const embed = new MessageEmbed()
