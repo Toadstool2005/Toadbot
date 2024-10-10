@@ -1,7 +1,7 @@
 const { Client, Intents, Collection } = require('discord.js');
 const mongoose = require('mongoose');
 const Levels = require('discord.js-leveling');
-const config = require('./ressource.json');
+const config = require('./config.json');
 
 // Configuration de MongoDB
 mongoose.connect(config.bot.mongopath, {
@@ -11,7 +11,7 @@ mongoose.connect(config.bot.mongopath, {
   .catch(err => console.error('Échec de la connexion à MongoDB', err));
 
 // Initialisation de Levels
-Levels.setURL(config.bot.mongopath);
+Levels.setURL(config.mongopath);
 
 // Création et configuration du client Discord
 const client = new Client({
@@ -39,7 +39,7 @@ client.commands = new Collection();
 client.slash = new Collection();
 
 // Connexion du client Discord
-client.login(config.bot.token);
+client.login(config.token);
 
 // Gestion des rejections non gérées
 process.on('unhandledRejection', error => {
