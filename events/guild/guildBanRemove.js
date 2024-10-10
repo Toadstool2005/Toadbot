@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-const config = require("../../ressource.json");
+const config = require("../../config.json");
 
 module.exports = async (client, ban) => {
     try {
@@ -8,7 +8,7 @@ module.exports = async (client, ban) => {
         const fetchModerator = allLogs.entries.first();
 
         // Définir où le message embed sera envoyé
-        const Channel = client.channels.cache.get(config.bot.ModérationID);
+        const Channel = client.channels.cache.get(config.ModérationID);
 
         // Créer le message embed
         const embed = new MessageEmbed()
