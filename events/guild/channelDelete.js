@@ -1,4 +1,6 @@
 const { MessageEmbed } = require('discord.js');
+const config = require("../../config.json");
+
 
 module.exports = async (client, channel) => {
     try {
@@ -13,7 +15,7 @@ module.exports = async (client, channel) => {
         const { executor } = logEntry;
 
         // Définir où le message embed sera envoyé
-        const Channel = client.channels.cache.get(config.bot.ChannelID);
+        const Channel = client.channels.cache.get(config.ChannelID);
 
         // Créer le message incorporé
         const embed = new MessageEmbed()
